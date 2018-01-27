@@ -47,27 +47,26 @@ updateGuessedLetters();
 
 document.onkeyup = function(event) {
 		guessesLeft--;
-	var userGuess = String.fromCharCode(event.which).toLowerCase();
+		var userGuess = String.fromCharCode(event.which).toLowerCase();
 
 
 	guessedLetters.push(userGuess);
 	updateGuessesLeft();
 	updateGuessedLetters();
 
-		// if (guessesLeft > 0) {
-			if (userGuess === letterToGuess){
-				wins++;
-				document.querySelector('#wins').innerHTML = 'Wins: ' + wins;
-				// displayWinsPsychic();
-				reset();
-			}
-
-			else if (guessesLeft == 0) {
-				losses++;
-				document.querySelector('#losses').innerHTML = 'Losses: ' + losses;
-				// displaylosePsychich();	
-				reset();
+		if (userGuess === letterToGuess){
+			wins++;
+			document.querySelector('#wins').innerHTML = 'Wins: ' + wins;
+			// displayWinsPsychic();
+			reset();
 		}
+
+		else if (guessesLeft == 0) {
+			losses++;
+			document.querySelector('#losses').innerHTML = 'Losses: ' + losses;
+			// displaylosePsychich();	
+			reset();
+	}
 	
 }
 
