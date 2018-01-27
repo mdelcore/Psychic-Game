@@ -47,22 +47,22 @@ updateGuessedLetters();
 
 document.onkeyup = function(event) {
 		guessesLeft--;
-	var userGuess = String.fromCharCode(event.keyCode).toLowerCase();
+	var userGuess = String.fromCharCode(event.which).toLowerCase();
 
 
 	guessedLetters.push(userGuess);
 	updateGuessesLeft();
 	updateGuessedLetters();
 
-		if (guessesLeft > 0) {
-			if (userGuess == letterToGuess){
+		// if (guessesLeft > 0) {
+			if (userGuess === letterToGuess){
 				wins++;
-				document.querySelector('#wins'),innerHTML = 'Wins: ' + wins;
-				displayWinsPsychic();
+				document.querySelector('#wins').innerHTML = 'Wins: ' + wins;
+				// displayWinsPsychic();
 				reset();
 			}
 
-			}else if (guessesLeft == 0) {
+			else if (guessesLeft == 0) {
 				losses++;
 				document.querySelector('#losses').innerHTML = 'Losses: ' + losses;
 				// displaylosePsychich();	
